@@ -1,0 +1,223 @@
+////////////// SCREEN LOADING //////////////
+.screen-loading {
+  width: 100%;
+  height: 100vh;
+
+  background-color: #030014;
+
+  z-index: 999;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  pointer-events: none;
+}
+
+.logo-paybank {
+  width: 80px;
+  height: 80px;
+
+  position: relative;
+  transform: translate3d(5px, 0, 0);
+}
+
+.logo-part-1 {
+  position: absolute;
+  top: 20%;
+  left: 12%;
+
+  width: 32px;
+  height: 40px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(243, 250, 230, 0.7) 0%,
+    #f3fae6 100%
+  );
+
+  transform: skewX(-20deg);
+  border-radius: 5px;
+
+  animation: logo-part-1 4s ease-in-out forwards;
+}
+
+.logo-part-2 {
+  position: absolute;
+  top: 0;
+  left: 18%;
+
+  width: 56px;
+  height: 38px;
+
+  background: linear-gradient(217.08deg, #bbe768 2.12%, #496022 98.96%);
+
+  transform: skewX(-20deg);
+  border-radius: 5px;
+
+  animation: logo-part-2 4s ease-in-out forwards;
+}
+
+@keyframes logo-part-1 {
+  0% {
+    width: 56px;
+    height: 36px;
+    transform: rotateX(-15deg) rotateY(-30deg) rotate(30deg);
+  }
+  50% {
+    width: 56px;
+    height: 36px;
+    transform: rotateX(30deg) rotateY(00deg) rotate(30deg);
+  }
+  100% {
+    width: 32px;
+    height: 40px;
+    transform: skewX(-20deg) rotateY(0deg);
+  }
+}
+
+@keyframes logo-part-2 {
+  0% {
+    transform: rotateX(-30deg) rotateY(-20deg) rotate(-60deg);
+  }
+  50% {
+    transform: rotateX(40deg) rotateY(20deg) rotate(-60deg);
+  }
+  100% {
+    transform: skewX(-20deg) rotateX(0deg) rotateY(0deg);
+  }
+}
+
+.bar-loader {
+  width: 128px;
+  height: 1px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: $primary-blue-10;
+    width: 50%;
+    height: 100%;
+
+    animation: bar-loader 4s ease forwards;
+  }
+}
+
+@keyframes bar-loader {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.svg-screen-loading {
+  z-index: -1;
+
+  position: absolute;
+  top: 50%;
+  left: 55%;
+
+  transform: translate(-50%, -50%) scale(1.5);
+  opacity: 0.5;
+}
+
+.animationFill {
+  transition: fill 0.3s ease-in-out;
+}
+
+@keyframes opacityLight2 {
+  0% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+.lightHome1 {
+  opacity: 0;
+  animation: lightsHome 3.5s ease 0s infinite alternate;
+}
+
+.lightHome2 {
+  opacity: 0;
+  animation: lightsHome 3.5s ease 0.5s infinite alternate;
+}
+.lightHome3 {
+  opacity: 0;
+  animation: lightsHome 3.5s ease 1s infinite alternate;
+}
+
+@keyframes lightsHome {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.32;
+  }
+}
+
+.lightPriceLight1 {
+  transition: all 500ms ease;
+  animation: glowPriceLight1 5s ease infinite alternate;
+}
+.lightPriceLight2 {
+  transition: all 500ms ease;
+  animation: glowPriceLight1 5s ease 3.5s infinite alternate;
+}
+
+@keyframes glowPriceLight1 {
+  0% {
+    opacity: 0.42;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0.72;
+    transform: translateY(80px);
+  }
+}
+
+.bars {
+  position: relative;
+}
+
+.WhiteBar {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  inset: 0;
+  background: #fff;
+}
+
+.BlueBar {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  inset: 0;
+  background: linear-gradient(90deg, #034cff 0%, #034cff 100%);
+}
+.sectionTimeline1 {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}

@@ -1,0 +1,1027 @@
+// Layout of project
+
+// Container-devices
+$container-xl: 1440px;
+$container-l: 1268px;
+$container-m: 960px;
+$container-s: 620px;
+$container-xs: 340px;
+$gutter: 32px;
+
+// Mixin of media-queries
+@mixin responsive($device) {
+  @if $device == xl {
+    // For resolutions upper 1440px
+    @media screen and (min-width: $container-xl) {
+      @content;
+    }
+  } @else if $device == ul {
+    // For resolutions upper 960px
+    @media screen and (min-width: $container-m) {
+      @content;
+    }
+  } @else if $device == l {
+    // For resolutions between 1140px and 1440px
+    @media screen and (max-width: $container-xl) and (min-width: $container-l) {
+      @content;
+    }
+  } @else if $device == m {
+    // For resolutions between 960px and 1140px
+    @media screen and (max-width: $container-l) and (min-width: $container-s) {
+      @content;
+    }
+  } @else if $device == s {
+    // For resolutions less than 960px
+    @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } @else if $device == xs {
+    // For resolutions less than 340px
+    @media screen and (max-width: $container-xs) {
+      @content;
+    }
+  }
+}
+
+@function grid($col, $total: 12) {
+  @return calc($col / $total) * 100%;
+}
+
+@for $i from 1 through 12 {
+  .grid-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: calc($gutter / 2);
+
+    padding: 16px 0px;
+    float: left;
+
+    @include responsive(s) {
+      width: calc(100% - #{$gutter});
+      float: none;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .grid-nobreak-#{$i} {
+    width: calc(#{grid($i)} - #{$gutter});
+    margin: calc($gutter / 2);
+
+    padding: 16px 0px;
+    float: left;
+  }
+}
+
+.container {
+  max-width: $container-l;
+  margin: 0 auto;
+
+  padding: 128px 24px;
+
+  /*display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;*/
+  //overflow: hidden;
+  //position: sticky;
+
+  // clearfix
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @include responsive(s) {
+    flex-direction: column;
+
+    padding: 96px 24px;
+  }
+}
+
+.disappear {
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.zindex-1 {
+  z-index: -1;
+}
+
+.row {
+  // clearfix
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.h-100 {
+  height: 100vh;
+}
+
+.h-100p {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-start-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+
+  @include responsive(s) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.flex-end-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+.flex-start-column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @include responsive(s) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include responsive(s) {
+    flex-direction: column;
+  }
+}
+
+.flex-center-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include responsive(s) {
+    flex-direction: column;
+    align-items: center !important;
+  }
+}
+
+.flex-space {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  @include responsive(s) {
+    flex-direction: column;
+  }
+}
+
+.start-align {
+  align-items: start;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.float-left {
+  float: left;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-item-1 {
+  flex: 1 1 360px;
+
+  @include responsive(s) {
+    flex: 1 1 auto;
+  }
+}
+
+.flex-item-2 {
+  flex: 2 1 360px;
+  @include responsive(s) {
+    flex: 2 1 auto;
+  }
+}
+
+.flex-item-3 {
+  flex: 3 1 360px;
+}
+
+.flex-item-4 {
+  flex: 4 1 360px;
+}
+
+.flex-item-5 {
+  flex: 5 1 360px;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+// Width's
+.w-auto {
+  width: auto;
+}
+.h-auto {
+  height: auto !important;
+}
+.w-100 {
+  width: 100%;
+}
+.w-75 {
+  width: 75%;
+
+  @include responsive(s) {
+    width: 100%;
+  }
+}
+.w-50 {
+  width: 50%;
+  @include responsive(s) {
+    width: 100%;
+  }
+}
+.w-25 {
+  width: 25%;
+  @include responsive(s) {
+    width: 100%;
+  }
+}
+
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+
+.bg-hero {
+  width: 100%;
+  height: 90vh;
+
+  position: absolute;
+  inset: 0;
+
+  transform: scale(1);
+
+  @include responsive(s) {
+    width: 100vw;
+    top: 50%;
+    left: 00%;
+
+    transform: translate(-0%, -50%) scale(1);
+  }
+
+  transition: 1s ease;
+
+  > .hero-svg {
+    width: 100%;
+  }
+}
+
+.light-hero {
+  width: 100vw;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 99;
+  transform: translateY(-60%) translateX(10%) scale(1);
+
+  @include responsive(s) {
+    user-select: none;
+    pointer-events: none;
+    overflow-x: hidden;
+    transform: translateY(0) translateX(0) scale(1);
+    & svg {
+      transform: scale(2) translateX(10%) translateY(-25%);
+    }
+  }
+}
+
+.hero {
+  height: 90vh;
+  padding: 180px 24px;
+  position: relative;
+
+  @include responsive(s) {
+    height: auto;
+    padding: 96px 24px;
+  }
+}
+
+.gradient-detail {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: 3;
+    background: linear-gradient(180deg, rgba(3, 0, 20, 0) 25.75%, #030014 48%);
+  }
+}
+
+.hero > div:nth-child(2) {
+  z-index: 4;
+}
+
+.hero-imgs {
+  margin-top: 64px;
+
+  @include responsive(s) {
+    margin-top: 0px;
+  }
+}
+
+.hero-img {
+  position: absolute;
+}
+
+.hero-img:nth-child(1) {
+  width: 527px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+
+  @include responsive(s) {
+    width: 320px;
+  }
+}
+
+.hero-img:nth-child(2) {
+  width: 411px;
+  left: 85%;
+  top: 25px;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  @include responsive(s) {
+    width: 250px;
+  }
+}
+.hero-img:nth-child(3) {
+  width: 411px;
+  left: 15%;
+  top: 25px;
+  transform: translate(-50%);
+  z-index: 1;
+  @include responsive(s) {
+    width: 250px;
+  }
+}
+
+//HEADLINE PRIMEIRA DOBRA
+
+.mainHeadline {
+  margin-top: 300px;
+
+  @include responsive(s) {
+    margin-top: 180px;
+  }
+}
+
+/*JOBS DIVS*/
+
+.jobs-div {
+  height: 180px;
+  border-top: 1px solid $primary-blue-70;
+  border-bottom: 1px solid $primary-blue-70;
+  overflow: hidden;
+  padding: 0px;
+  gap: 0px;
+
+  @include responsive(s) {
+    height: auto;
+    padding: 24px 0px;
+    gap: 24px;
+    align-items: start;
+    & p {
+      text-align: start;
+      width: 100%;
+    }
+
+    & div.flex-center {
+      justify-content: start;
+    }
+    & h3 {
+      text-align: start;
+    }
+  }
+
+  & svg {
+    transition: all 500ms ease;
+  }
+
+  &:hover rect {
+    fill: rgba(167, 154, 237, 0.1);
+    backdrop-filter: blur(20px);
+  }
+}
+
+.jobPreviewImage {
+  width: 260px;
+  position: absolute;
+  top: 50%;
+  right: calc(0% - 260px);
+  transform: translate(0, -50%);
+  z-index: -1;
+  transition: all 800ms ease;
+
+  @include responsive(s) {
+    display: none;
+  }
+}
+
+.jobs-div:hover .jobPreviewImage {
+  right: 0%;
+}
+
+/*WORKFLOW ITEMS*/
+.workflow-item {
+  height: 480px;
+  border-radius: 16px;
+  position: relative;
+  background: linear-gradient(
+    360deg,
+    rgba(222, 218, 242, 0.1) 0%,
+    rgba(222, 218, 242, 0) 58.66%
+  );
+
+  @include responsive(s) {
+    width: 100%;
+  }
+
+  & .txtsWorkflow {
+    z-index: 4;
+    position: absolute;
+    top: 50%;
+  }
+
+  & .svgItem {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    -webkit-mask-image: linear-gradient(#030014, transparent 70%);
+
+    & svg {
+      transform: translateY(30px);
+    }
+
+    //RESPONSIVE SETTINGS
+  }
+
+  &::before {
+    //BORDA
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 99;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.07)
+    );
+    -webkit-mask: linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+  }
+
+  & p {
+    z-index: 4;
+  }
+}
+
+.workflowItems {
+  gap: 32px;
+}
+
+.feedbacks {
+  gap: 32px;
+}
+
+.profilePerson {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(0px - 48px);
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.feedbackItem {
+  border-radius: 16px;
+  align-self: stretch;
+  justify-content: start;
+  background: radial-gradient(
+      79.34% 73.74% at 79.42% 0%,
+      rgba(167, 154, 237, 0.04) 0%,
+      rgba(167, 154, 237, 0) 100%
+    ),
+    linear-gradient(
+      360deg,
+      rgba(222, 218, 242, 0.05) 0%,
+      rgba(222, 218, 242, 0) 70.31%
+    );
+  position: relative;
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 99;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.07)
+    );
+    -webkit-mask: linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+  }
+}
+
+//SECTION PRICES
+
+.prices {
+  gap: 32px;
+}
+
+.pricePage {
+  padding: 48px 32px;
+  height: 436px;
+  position: relative;
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  justify-content: space-between;
+
+  @include responsive(s) {
+    width: 100%;
+  }
+
+  //BG SVG LINES
+
+  &::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../svg/priceLines.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    -webkit-mask-image: linear-gradient(
+      43deg,
+      rgba(3, 0, 20, 0) 65%,
+      #030014 100%
+    );
+  }
+
+  //BORDA
+  &::after {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 99;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1)
+    );
+    -webkit-mask: linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+  }
+
+  //TEXTOS
+
+  & .pageType {
+    color: $gray-2;
+  }
+
+  & .pagePrice {
+    color: $primary-blue-30;
+  }
+
+  & .prazoName {
+    color: $primary-blue-20;
+    font-weight: bold;
+  }
+
+  & .daysOfPrazo {
+    color: $gray-2;
+    font-weight: normal;
+  }
+
+  //DIVISOR
+  & .divisor {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 1px;
+      background: rgba(167, 154, 237, 0.3);
+    }
+  }
+
+  //AJUSTANDO Z INDEX DOS ELEMENTOS
+
+  & div,
+  button {
+    z-index: 2;
+  }
+
+  & div.modal {
+    z-index: 1000;
+  }
+
+  & div.modalOpenButton {
+    cursor: pointer;
+    z-index: 1000;
+  }
+}
+
+.pricePage:nth-child(3) {
+  //BORDA
+  &::after {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 99;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #3c20d9, #070226);
+    -webkit-mask: linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+  }
+}
+
+.prazo {
+  position: relative;
+  overflow: visible;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(0px - 64px);
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.lightsPrice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+//MEET ME SETTINGS
+
+.meetMeSection {
+  border-radius: 16px;
+  position: relative;
+  align-items: start;
+  height: 430px;
+  overflow: hidden;
+  background: radial-gradient(
+      79.34% 73.74% at 79.42% 0%,
+      rgba(167, 154, 237, 0.04) 0%,
+      rgba(167, 154, 237, 0) 100%
+    ),
+    linear-gradient(
+      360deg,
+      rgba(222, 218, 242, 0.05) 0%,
+      rgba(222, 218, 242, 0) 70.31%
+    );
+
+  @include responsive(s) {
+    height: auto;
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 99;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.1)
+    );
+    -webkit-mask: linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+  }
+
+  & img {
+    width: 90%;
+
+    @include responsive(s) {
+      width: 100%;
+    }
+  }
+}
+
+.bioPhoto {
+  display: flex;
+  justify-content: end;
+
+  @include responsive(s) {
+    justify-content: center;
+  }
+}
+
+//CTA SETTINGS
+
+.radialCtaBg {
+  width: 800px;
+  height: 475px;
+  border-radius: 16px;
+  background: radial-gradient(
+    119.99% 105.89% at 50% 0%,
+    #030014 53.56%,
+    #3c20d9 80.69%,
+    #c3b9f7 100%
+  );
+
+  @include responsive(s) {
+    width: 100%;
+    height: 360px;
+    padding: 32px;
+  }
+}
+
+.faqQuestion {
+  gap: 32px;
+}
+
+.frequentlyQuestion {
+  border-radius: 16px;
+  align-self: flex-start;
+  height: 230px;
+  justify-content: start;
+  background: radial-gradient(
+      79.34% 73.74% at 79.42% 0%,
+      rgba(167, 154, 237, 0.04) 0%,
+      rgba(167, 154, 237, 0) 100%
+    ),
+    linear-gradient(
+      360deg,
+      rgba(222, 218, 242, 0.05) 0%,
+      rgba(222, 218, 242, 0) 70.31%
+    );
+  position: relative;
+
+  & p:nth-child(2) {
+    color: $gray-4;
+  }
+
+  &::after {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 99;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.07)
+    );
+    -webkit-mask: linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+  }
+
+  @include responsive(s) {
+    height: auto;
+  }
+}
+
+footer svg {
+  width: auto;
+}
+
+.socialIcon {
+  transition: all 500ms ease;
+
+  &:hover {
+    filter: drop-shadow(
+        0px 2.536127805709839px 7.744247913360596px rgba(93, 15, 140, 0.13)
+      )
+      drop-shadow(
+        0px 7.012069225311279px 21.411853790283203px rgba(93, 15, 140, 0.18)
+      )
+      drop-shadow(
+        0px 16.882360458374023px 51.55149459838867px rgba(93, 15, 140, 0.23)
+      )
+      drop-shadow(0px 56px 171px rgba(93, 15, 140, 0.36));
+  }
+}
+
+footer > .flex-start-row {
+  gap: 24px;
+}
+
+footer div > .flex-start-row {
+  flex-direction: row;
+}
+
+//DOBRA 2 LIGHT SETTINGS
+
+.help {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: -50%;
+    background-image: url("../../svg/light.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -200px;
+    background-position-x: -250px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    animation: opacityLight2 10s infinite alternate;
+
+    @include responsive(s) {
+      left: 0%;
+      background-position-y: center;
+      background-position-x: center;
+      top: -25%;
+    }
+  }
+}
+
+//MODAL OPENING
+
+.modalOpenButton {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  right: 8px;
+  z-index: 99;
+
+  cursor: pointer;
+
+  background-image: url("../../svg/icon-alert-circle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  align-items: center;
+  background-color: rgba(3, 0, 20, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 600ms ease;
+
+  & .modalContent {
+    position: relative;
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 32px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        79.34% 73.74% at 79.42% 0%,
+        rgba(167, 154, 237, 0.04) 0%,
+        rgba(167, 154, 237, 0) 100%
+      ),
+      linear-gradient(
+        360deg,
+        rgba(222, 218, 242, 0.05) 0%,
+        rgba(222, 218, 242, 0) 70.31%
+      );
+
+    &::after {
+      content: "";
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      inset: 0px;
+      z-index: 99;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.07)
+      );
+      -webkit-mask: linear-gradient(black, black) content-box content-box,
+        linear-gradient(black, black);
+      -webkit-mask-composite: xor;
+    }
+  }
+}
+
+.modalCloseButton {
+  position: absolute;
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 8px;
+  right: 8px;
+  z-index: 1000;
+
+  cursor: pointer;
+
+  background-image: url("../../svg/x-circle.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal-active {
+  opacity: 1;
+  pointer-events: all;
+}

@@ -1,0 +1,114 @@
+.btn-cta {
+  display: inline-flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 6px;
+  border: 1px solid var(--secondary-purple-20, #ce9aed);
+  background: rgba(7, 2, 38, 0.01);
+  box-shadow: 3px -3px 17px 0px rgba(171, 79, 227, 0.3) inset;
+  color: var(--secondary-purple-10, #e0b9f7);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  cursor: pointer;
+  transition: all 500ms ease;
+
+  &:hover {
+    background: rgba(58, 6, 89, 0.5);
+  }
+
+  @include typeface-1(p2, desktop);
+  @include responsive(s) {
+    @include typeface-1(p2, mobile);
+  }
+
+  position: relative;
+  transition: 0.7s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn-cta-bg {
+  display: inline-flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 6px;
+  border: 1px solid var(--secondary-purple-20, #ce9aed);
+  background: #070226;
+  box-shadow: 3px -3px 17px 0px rgba(171, 79, 227, 0.3) inset;
+  color: $secondary-purple-20;
+  font-family: "HelveticaNowDisplay", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  cursor: pointer;
+  transition: all 500ms ease;
+
+  @include typeface-1(p2, desktop);
+  @include responsive(s) {
+    @include typeface-1(p2, mobile);
+  }
+
+  &:hover {
+    background: $primary-blue-60;
+  }
+
+  position: relative;
+  transition: 0.7s ease;
+}
+
+.non-clickable-button {
+  display: inline-flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 61px;
+  border: 1px solid var(--secondary-purple-60, #3a0659);
+  background: #030014;
+  box-shadow: 0px 0px 17px 0px #5d0f8c inset;
+}
+
+.cta-price-button {
+  display: flex;
+  width: 100%;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid rgba(34, 15, 140, 0.5);
+  background: linear-gradient(0deg, #070226 0%, rgba(24, 1, 38, 0) 100%);
+  box-shadow: 0px 1px 13px 0px rgba(167, 154, 237, 0.48) inset;
+  color: var(--primary-blue-10, #c3b9f7);
+  font-family: "HelveticaNowDisplay", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+
+  cursor: pointer;
+
+  transition: all 500ms ease;
+
+  &:hover {
+    background: #130659;
+  }
+}
+
+.link-footer {
+  padding: 8px 8px 8px 8px;
+
+  transition: 0.7s ease;
+
+  &:hover {
+    padding: 8px 8px 8px 16px;
+  }
+}

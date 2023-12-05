@@ -1,0 +1,18 @@
+<svg width="314" height="314" viewBox="0 0 314 314" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="code">
+<path id="RightCodeFill" class="animationFill" d="M209.333 235.5L287.833 157L209.333 78.5" stroke="url(#paint0_linear_230_150)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="LeftCodeFill" class="animationFill" d="M104.667 78.5L26.167 157L104.667 235.5" stroke="url(#paint1_linear_230_150)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="LeftCodeStroke" d="M24.5001 153C21.9999 155.5 22 158.5 24.5001 161L101.5 238.5C103 240 106.5 240 108 238.5C109.355 237.145 109.5 234.5 107.5 232.5L32.0001 157L107.5 81.5C109.5 79.5 109 77 107.5 75.5C106 74 104 73.5 102 75.5L24.5001 153Z" stroke="#D0CCE3"/>
+<path id="RightCodeStroke" d="M289.512 153C292.012 155.5 292.012 158.5 289.512 161L212.512 238.5C210 241 207.512 240 206.012 238.5C204.86 237.349 204 235 206.512 232.5L282.012 157L206.512 81.5C204.512 79.5 205.012 77 206.512 75.5C208.012 74 210.012 73.5 212.012 75.5L289.512 153Z" stroke="#D0CCE3"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_230_150" x1="287.833" y1="157" x2="209.333" y2="157" gradientUnits="userSpaceOnUse">
+<stop stop-color="#664FE3"/>
+<stop offset="1" stop-color="#220F8C"/>
+</linearGradient>
+<linearGradient id="paint1_linear_230_150" x1="104.667" y1="157" x2="26.167" y2="157" gradientUnits="userSpaceOnUse">
+<stop stop-color="#664FE3"/>
+<stop offset="1" stop-color="#220F8C"/>
+</linearGradient>
+</defs>
+</svg>

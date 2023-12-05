@@ -1,0 +1,75 @@
+// Colors of project
+
+// Brand-colors
+$primary-blue-10: #c3b9f7;
+$primary-blue-20: #a79aed;
+$primary-blue-30: #664fe3;
+$primary-blue-40: #3c20d9;
+$primary-blue-50: #220f8c;
+$primary-blue-60: #130659;
+$primary-blue-70: #070226;
+
+$secondary-purple-10: #e0b9f7;
+$secondary-purple-20: #ce9aed;
+$secondary-purple-30: #ab4fe3;
+$secondary-purple-40: #9320d9;
+$secondary-purple-50: #5d0f8c;
+$secondary-purple-60: #3a0659;
+$secondary-purple-70: #180126;
+
+// Gray Scale
+$gray-1: #dedaf2;
+$gray-2: #d0cce3;
+$gray-3: #b4b1c4;
+$gray-4: #9895a6;
+$gray-5: #75737f;
+$gray-6: #5d5c66;
+$gray-7: #46454c;
+$gray-8: #2f2e33;
+$gray-9: #171719;
+$gray-10: #0c0c0e;
+
+// Semantic Colors
+
+$support-01: #2962ff;
+$support-02: #0bb07b;
+$support-03: #ffce52;
+$support-04: #e0e0e0;
+$support-05: #f03d3d;
+
+.color-gradient-01 {
+  display: inline-block;
+  background: linear-gradient(
+    270deg,
+    $primary-blue-30 0%,
+    $primary-blue-50 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.color-gradient-02 {
+  display: inline-block;
+  background: linear-gradient(
+    270deg,
+    $secondary-purple-20 0%,
+    $secondary-purple-40 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.radial-gradient {
+  display: inline-block;
+  background: var(
+    --gradient-radial-gradient-text,
+    radial-gradient(
+      54.4% 357.03% at 50% -16.41%,
+      #d0cce3 0%,
+      rgba(208, 204, 227, 0.45) 98.7%
+    )
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
