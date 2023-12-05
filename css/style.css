@@ -645,13 +645,14 @@
     text-align: start;
   }
 }
-.jobs-div svg {
-  transition: all 500ms ease;
+.jobs-div svg, .jobs-div rect, .jobs-div path {
+  transition: 350ms all ease;
 }
 .jobs-div:hover rect {
-  fill: rgba(167, 154, 237, 0.1);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  fill: #a79aed;
+}
+.jobs-div:hover path {
+  stroke: #180126;
 }
 
 .jobPreviewImage {

@@ -446,14 +446,17 @@ $gutter: 32px;
       text-align: start;
     }
   }
-
-  & svg {
-    transition: all 500ms ease;
+  svg, rect, path{
+    transition: 350ms all ease;
   }
 
-  &:hover rect {
-    fill: rgba(167, 154, 237, 0.1);
-    backdrop-filter: blur(20px);
+  &:hover{
+    rect {
+      fill: $primary-blue-20;
+    }
+    path{
+      stroke: $secondary-purple-70;
+    }
   }
 }
 

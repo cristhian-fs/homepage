@@ -1,5 +1,9 @@
 <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0.5" y="31.5" width="31" height="63" rx="15.5" transform="rotate(-90 0.5 31.5)" stroke="#9895A6"/>
-<path d="M27.333 16H36.6663" stroke="#9895A6" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M32 11.3333L36.6667 16L32 20.6667" stroke="#9895A6" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="Arrow-right">
+<rect id="Rectangle 2173" x="0.5" y="31.5" width="31" height="63" rx="15.5" transform="rotate(-90 0.5 31.5)" stroke="#9895A6"/>
+<g id="arrow-right">
+<path id="Vector" d="M27.333 16H36.6663" stroke="#9895A6" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M32 11.3333L36.6667 16L32 20.6667" stroke="#9895A6" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
 </svg>
