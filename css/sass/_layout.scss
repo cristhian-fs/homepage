@@ -300,7 +300,7 @@ $gutter: 32px;
   transform: scale(1);
 
   @include responsive(s) {
-    width: 100vw;
+    width: 100%;
     top: 50%;
     left: 00%;
 
@@ -316,7 +316,6 @@ $gutter: 32px;
 
 .light-hero {
   width: 100vw;
-  overflow: hidden;
   user-select: none;
   pointer-events: none;
   position: absolute;
@@ -336,8 +335,6 @@ $gutter: 32px;
 }
 
 .hero {
-  height: 90vh;
-  padding: 180px 24px;
   position: relative;
 
   @include responsive(s) {
@@ -349,6 +346,11 @@ $gutter: 32px;
 .gradient-detail {
   position: relative;
   overflow: hidden;
+  height: 896px;
+
+  @include responsive(s){
+    height: auto;
+  }
 
   &::after {
     content: "";
@@ -357,7 +359,8 @@ $gutter: 32px;
     height: 100%;
     inset: 0;
     z-index: 3;
-    background: linear-gradient(180deg, rgba(3, 0, 20, 0) 25.75%, #030014 48%);
+    background: linear-gradient(180deg, rgba(3, 0, 20, 0) 75%, #030014 100%);
+    pointer-events: none;
   }
 }
 

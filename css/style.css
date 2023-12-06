@@ -492,7 +492,7 @@
 }
 @media screen and (max-width: 960px) {
   .bg-hero {
-    width: 100vw;
+    width: 100%;
     top: 50%;
     left: 0%;
     transform: translate(0%, -50%) scale(1);
@@ -504,7 +504,6 @@
 
 .light-hero {
   width: 100vw;
-  overflow: hidden;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -529,8 +528,6 @@
 }
 
 .hero {
-  height: 90vh;
-  padding: 180px 24px;
   position: relative;
 }
 @media screen and (max-width: 960px) {
@@ -543,6 +540,12 @@
 .gradient-detail {
   position: relative;
   overflow: hidden;
+  height: 896px;
+}
+@media screen and (max-width: 960px) {
+  .gradient-detail {
+    height: auto;
+  }
 }
 .gradient-detail::after {
   content: "";
@@ -551,7 +554,8 @@
   height: 100%;
   inset: 0;
   z-index: 3;
-  background: linear-gradient(180deg, rgba(3, 0, 20, 0) 25.75%, #030014 48%);
+  background: linear-gradient(180deg, rgba(3, 0, 20, 0) 75%, #030014 100%);
+  pointer-events: none;
 }
 
 .hero > div:nth-child(2) {
@@ -1945,6 +1949,8 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 5;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
   font-family: "HelveticaNowDisplay", sans-serif;
   font-size: 64px;
   line-height: 110%;
@@ -2821,6 +2827,115 @@ a {
   height: auto;
 }
 
+.imageHero {
+  width: 800px;
+  height: 420px;
+  padding: 8px;
+  border-radius: 16px;
+  position: relative;
+  background-color: rgba(195, 185, 247, 0.05);
+}
+.imageHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(195, 185, 247, 0.15) 0%, rgba(195, 185, 247, 0) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.imageHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  padding: 2px;
+  background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(185, 195, 247, 0.65), transparent 40%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: 0.35s all ease;
+  opacity: 0;
+}
+@media screen and (max-width: 960px) {
+  .imageHero {
+    width: 100%;
+    height: 250px;
+  }
+}
+.imageHero:hover::after {
+  opacity: 1;
+}
+
+@keyframes cta-line-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.imagesHero {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid rgba(195, 185, 247, 0.1);
+  height: 100%;
+  overflow: hidden;
+}
+.imagesHero img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.image01 {
+  animation: handleImage01 10s linear infinite;
+}
+
+.image02 {
+  animation: handleImage02 10s linear infinite;
+}
+
+.image03 {
+  animation: handleImage03 10s linear infinite;
+}
+
+@keyframes handleImage01 {
+  0%, 30% {
+    opacity: 1;
+  }
+  33%, 97% {
+    opacity: 0;
+  }
+}
+@keyframes handleImage02 {
+  0%, 30%, 66%, 100% {
+    opacity: 0;
+  }
+  33%, 63%, 97% {
+    opacity: 1;
+  }
+}
+@keyframes handleImage03 {
+  0%, 63%, 100% {
+    opacity: 0;
+  }
+  66%, 97% {
+    opacity: 1;
+  }
+}
 .accordion-button {
   display: block;
   width: 100%;

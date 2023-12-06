@@ -207,6 +207,8 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   z-index: 5;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
   @include typeface-1(h1, desktop);
   @include responsive(s) {
     @include typeface-1(h1, mobile);

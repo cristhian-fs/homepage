@@ -90,4 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const imageHero = document.querySelector('.imageHero')
+const rect = imageHero.getBoundingClientRect()
+imageHero.addEventListener('mousemove', (e) => {
+  
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+  
+  imageHero.style.setProperty('--mouse-x', `${x}px`)
+  imageHero.style.setProperty('--mouse-y', `${y}px`)
+})
+
 
